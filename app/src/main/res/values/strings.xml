@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Service Engineer</string>
+    <string name="work">work</string>
+    <string name="home">home</string>
+    <string name="report">report</string>
+    <string name="appbar_scrolling_view_behavior">appbar</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="status">status</string>
+    <string name="to_attend">to attend</string>
+    <string name="name">(S)</string>
+    <string name="description">description</string>
+    <string-array name="productname">
+        <item>HP Pavilion</item>
+        <item>Mac book pro</item>
+        <item>Dell Inspiron</item>
+        <item>Bluestar AC</item>
+        <item>Sony Bravia</item>
+    </string-array>
+    <string-array name="issue">
+        <item>ram problem</item>
+        <item>hard disk issue</item>
+        <item>heat sink problem</item>
+        <item>AC not working</item>
+        <item>display broken</item>
+    </string-array>
+    <string-array name="description">
+        <item>suddenly stopped working</item>
+        <item>suddenly stopped working</item>
+        <item>suddenly stopped working</item>
+        <item>suddenly stopped working</item>
+        <item>suddenly stopped working</item>
+    </string-array>
+    <string-array name="name">
+        <item>Raj</item>
+        <item>Ajay</item>
+        <item>Jay</item>
+        <item>Krishna</item>
+        <item>Karthik</item>
+    </string-array>
+    <string-array name="phone">
+        <item>1111111111</item>
+        <item>2222222222</item>
+        <item>3333333333</item>
+        <item>4444444444</item>
+        <item>5555555555</item>
+    </string-array>
+    <string-array name="address">
+        <item>Tadepalligudem</item>
+        <item>Tadepalligudem</item>
+        <item>Tadepalligudem</item>
+        <item>Tadepalligudem</item>
+        <item>Tadepalligudem</item>
+    </string-array>
+</resources>
