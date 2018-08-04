@@ -2,6 +2,8 @@ package com.example.cse.serviceengineer;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class Home_Model {
     @SerializedName("productname")
     private String  productname;
@@ -9,14 +11,22 @@ public class Home_Model {
     private String issue;
     @SerializedName("description")
     private String description;
-    @SerializedName("customername")
+    @SerializedName("customerName")
     private String customername;
-    @SerializedName("phno")
+    @SerializedName("customerPhno")
     private String phno;
     @SerializedName("address")
     private String address;
-    @SerializedName("status")
-    private String status;
+
+    public Home_Model(String productname, String issue, String description, String customername, String phno, String address, String status) {
+        this.productname = productname;
+        this.issue = issue;
+        this.description = description;
+        this.customername = customername;
+        this.phno = phno;
+        this.address = address;
+
+    }
 
 
     public String getIssue() {
@@ -39,12 +49,9 @@ public class Home_Model {
         return address;
     }
 
-    public String getStatus() {
-        return status;
-    }
+
 
     public String getProductname() {
-
         return productname;
     }
 
@@ -72,7 +79,5 @@ public class Home_Model {
         this.address = address;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+
 }

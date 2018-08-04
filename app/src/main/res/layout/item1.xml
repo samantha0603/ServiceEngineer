@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 <android.support.v7.widget.CardView
 
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -46,7 +47,7 @@
             android:layout_gravity="start"
             android:textColor="#000000"
             android:textStyle="bold"
-            android:text="Issue" />
+            android:text="Issue : " />
     <TextView
         android:id="@+id/issue"
         android:layout_width="wrap_content"
@@ -69,7 +70,7 @@
                 android:layout_gravity="start"
                 android:textColor="#000000"
                 android:textStyle="bold"
-                android:text="Description" />
+                android:text="Description : " />
             <TextView
                 android:id="@+id/description"
                 android:layout_width="wrap_content"
@@ -92,7 +93,7 @@
                 android:layout_gravity="start"
                 android:textColor="#000000"
                 android:textStyle="bold"
-                android:text="Customer name" />
+                android:text="Customer name : " />
             <TextView
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
@@ -115,7 +116,7 @@
                 android:layout_gravity="start"
                 android:textColor="#000000"
                 android:textStyle="bold"
-                android:text="Phone no" />
+                android:text="Phone no : " />
             <TextView
                 android:id="@+id/phone"
                 android:layout_width="wrap_content"
@@ -138,7 +139,7 @@
                 android:layout_gravity="start"
                 android:textColor="#000000"
                 android:textStyle="bold"
-                android:text="Address" />
+                android:text="Address : " />
             <TextView
                 android:id="@+id/address"
                 android:layout_width="wrap_content"
@@ -150,20 +151,10 @@
 
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/workinfobutton"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_fiber_manual_record_black_24dp"
-                android:layout_gravity="center_horizontal"/>
-        </LinearLayout>
     </LinearLayout>
 
 </android.support.v7.widget.CardView>
 
 
+</RelativeLayout>

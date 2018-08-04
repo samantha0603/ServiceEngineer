@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimaryDark">#9c1d5b</color>
-    <color name="colorPrimary">#ffbc276f</color>
+    <color name="colorPrimaryDark">#255bb2</color>
+    <color name="colorPrimary">#1E90FF</color>
     <color name="white">#fafafa</color>
     <color name="dark">#bdbdbd</color>
-    <color name="colorAccent">#ff7f07</color>
-    <color name="iconColor">#FFBC276F</color>
-    <color name="darktext">#ffbc276f</color>
+    <color name="colorAccent">#1E90FF</color>
+    <color name="red">#e23a3a</color>
+    <color name="iconColor">#1E90FF</color>
+    <color name="darktext">#1E90FF</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="viewfinder_laser">#1E90FF</color>
+    <color name="viewfinder_border">#ffffff</color>
 </resources>
