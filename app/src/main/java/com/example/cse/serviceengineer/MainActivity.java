@@ -2,6 +2,7 @@ package com.example.cse.serviceengineer;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentTransaction;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     Fragment_report fragment_report;
 
 
+
     public BottomNavigationView mBottomNavigationView;
 
     @Override
@@ -34,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
         View view =getSupportActionBar().getCustomView();
         if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED)
             ActivityCompat.requestPermissions(MainActivity.this, new String[] {Manifest.permission.CAMERA}, 100);
+        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_DENIED)
+            ActivityCompat.requestPermissions(MainActivity.this, new String[] {Manifest.permission.SEND_SMS}, 100);
+
 fragment_home1=new Fragment_home1();
 fragment_status=new Fragment_status();
 fragment_report=new Fragment_report();
@@ -68,13 +73,24 @@ fragment_report=new Fragment_report();
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         switch(item.getItemId())
         {
             case R.id.drop1:
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 break;
             case R.id.drop2:
+                SharedPreferences sp = getSharedPreferences("login",MODE_PRIVATE);
+                SharedPreferences.Editor edit = sp.edit();
+                edit.remove("username");
+                edit.remove("password");
+                edit.remove("logined");
+                edit.commit();
                 startActivity(new Intent(getApplicationContext(),Login.class));
+                finish();
+                break;
+            case R.id.drop3:
+                startActivity(new Intent(getApplicationContext(),Password.class));
                 break;
         }
         return super.onOptionsItemSelected(item);

@@ -1,21 +1,18 @@
 package com.example.cse.serviceengineer;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.Gravity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import java.util.List;
 
@@ -25,7 +22,7 @@ import retrofit2.Response;
 
 public class Login extends Activity {
     Button b;
-    TextView error,forget;
+    TextView error,regt;
     ProgressBar progressBar;
 
     EditText userid, pwd;
@@ -40,28 +37,28 @@ public class Login extends Activity {
         forgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Password.class));
-
+                startActivity(new Intent(getApplicationContext(),OTPTest.class));
             }
         });
 
         progressBar=findViewById(R.id.loginpb);
         progressBar.setVisibility(View.GONE);
         b = findViewById(R.id.b2);
-
+        regt=findViewById(R.id.regtext);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
 
-
+                InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
                 userid = findViewById(R.id.user_id);
                 pwd = findViewById(R.id.pwd_id);
                 usr1 = userid.getText().toString();
                 pass = pwd.getText().toString();
 
                 progressBar.setVisibility(View.VISIBLE);
-               if (usr1.length()==0 || pass.length()==0)
-                   progressBar.setVisibility(View.GONE);
+                if (usr1.length()==0 || pass.length()==0)
+                    progressBar.setVisibility(View.GONE);
                 //login
                 if(usr1.length()>0 && pass.length()>0 ) {
                     String s = "{\"username\":\"" + usr1 + "\"}" + "{\"password\":\"" + pass + "\"}";
@@ -93,7 +90,7 @@ public class Login extends Activity {
                             {
                                 error = findViewById(R.id.error);
                                 progressBar.setVisibility(View.GONE);
-                                error.setText("Invalid Username and Password");
+                                error.setText("Invalid Username or Password");
                                 error.setGravity(Gravity.CENTER_HORIZONTAL);
                             }
 
@@ -126,6 +123,12 @@ public class Login extends Activity {
 
                 //Toast.makeText(getApplicationContext(),"error login",Toast.LENGTH_LONG).show();
 
+            }
+        });
+        regt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),Register.class));
             }
         });
     }
